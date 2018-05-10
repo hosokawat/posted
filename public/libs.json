@@ -1,0 +1,26 @@
+[
+    {
+        "url": "http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js",
+        "name": "jquery(3.3.1)",
+        "category": "jquery",
+        "order": 1
+    },
+    {
+        "url": "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js",
+        "name": "jquery(2.2.4)",
+        "category": "jquery",
+        "order": 2
+    },
+    {
+        "url": "http://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js",
+        "name": "jquery(1.12.4)",
+        "category": "jquery",
+        "order": 3
+    },
+    {
+        "url": "http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.js",
+        "name": "lodash(4.17.10)",
+        "category": "lodash",
+        "order": 1
+    }
+]

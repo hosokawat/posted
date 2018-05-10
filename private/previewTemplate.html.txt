@@ -1,0 +1,13 @@
+<html>
+<style>
+:css
+</style>
+<body>
+:html
+:libs
+<script>
+:js
+</script>
+</body>
+
+</html>

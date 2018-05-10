@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posted</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand text-monospace" href="/">Posted</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1" data-list='{jquery:aa}'>
+                    <ul class="nav navbar-nav">
+                        <li id='addLibDropdown' class="dropdown">
+                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Add Library</a>
+                            <div id='addLibDropdownMenu' class="dropdown-menu" role="menu">
+
+                                <form class="px-4 py-3">
+                                    <div class="form-group">
+                                        <label for="exampleDropdownFormEmail1">from List</label>
+                                        <li class="dropdown" id='addLibList'>
+                                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true" href="#">select</a>
+                                            <div class="dropdown-menu" role="menu">
+                                                <a class="dropdown-item" role="presentation" href="#">
+                                                    First Item</a>
+                                                <a class="dropdown-item" role="presentation" href="#">Second Item</a>
+                                                <a class="dropdown-item" role="presentation" href="#">Third Item</a>
+                                                <span class="dropdown-item-text" role="presentation">Text Item</span>
+                                                <a class="dropdown-item" role="presentation" href="#">Menu Item</a>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </form>
+                                <div class="dropdown-divider"></div>
+                                <form class="px-4 py-3">
+                                    <div class="form-group">
+                                        <label for="exampleDropdownFormEmail1">at Url</label>
+                                        <input id='addLibUrl' type="url" class="form-control" id="exampleDropdownFormEmail1" placeholder="https://code.jquery.com/jquery-3.3.1.min.js">
+                                    </div>
+                                    <button id='addLibUrlSubmit' type="submit" class="btn btn-primary">Add</button>
+                                </form>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a id='share' class="nav-link" href="#" data-toggle="modal" data-target="#myModal">
+                                <i class="fa fa-link"></i>&nbsp;Share</a>
+                        </li>
+                    </ul>
+                    <ul id="toggleContent" class="nav navbar-nav mx-auto">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-ext="html" href="#">HTML</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-ext="css" href="#">CSS</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-ext="js" href="#">Javascript</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-ext="preview" href="#">Output</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a id='autoReload' class="nav-link active" data-ext="reload" href="#">
+                                <i class="fa fa-refresh"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="#">History&nbsp;</a>
+                            <div class="dropdown-menu" id='historyList' role="menu">
+                            </div>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" href=":commit">commit</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div id="content" class="row">
+                <div data-ext='html' class="col">
+                    <form>
+                        <textarea class="form-control form-control-lg">:html</textarea>
+                    </form>
+                </div>
+                <div data-ext='css' class="col">
+                    <form>
+                        <textarea class="form-control form-control-lg">:css</textarea>
+                    </form>
+                </div>
+                <div data-ext='js' class="col">
+                    <form>
+                        <textarea class="form-control form-control-lg">:js</textarea>
+                    </form>
+                </div>
+                <div id='preview' data-ext='preview' style="position: relative;" class="col">
+                    <a id='openPreview' class="nav-link active" data-ext="reload" href=":pv" target="_blank">
+                        <i class="fa fa-external-link" style="position: absolute; width: auto;height: auto;top: 2vh;left: 2vh; z-index:10;"></i>
+                    </a>
+                    <iframe style="display:inline; position:absolute;top:0;left:0;z-index:0;" src=":pv"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <hr />
+                    <span>Design at Lunch Time
+                        <i class="fa fa-cutlery"></i>.
+                        <br />
+                    </span>
+                    <a href="https://github.com/hosokawat/posted">Please Support to Trial
+                        <i class="fa fa-leaf"></i>, Use
+                        <i class="fa fa-download"></i>,  Donation
+                        <i class="fa fa-gift"></i>, PullRequest
+                        <i class="fa fa-rocket"></i>, Advice
+                        <i class="fa fa-commenting-o"></i>, and Reviews
+                        <i class="fa fa-thumbs-o-up"></i>
+                        <br />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Let's Share
+                        <i class="fa fa-send"></i>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id='shareLink'></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
