@@ -71,8 +71,8 @@
                             <a class="nav-link active" data-ext="preview" href="#">Output</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a id='autoReload' class="nav-link active" data-ext="reload" href="#">
-                                <i class="fa fa-refresh"></i>
+                            <a id='openPreview' class="nav-link active" href=":pv" target="_blank">
+                                <i class="fa fa-external-link"></i>
                             </a>
                         </li>
 
@@ -95,25 +95,34 @@
         <div class="container-fluid">
             <div id="content" class="row">
                 <div data-ext='html' class="col">
-                    <form>
-                        <textarea class="form-control form-control-lg">:html</textarea>
-                    </form>
+                    <div class='col-inner'>
+                        <span class='label'>html</span>
+                        <form>
+                            <textarea class="form-control form-control-lg">:html</textarea>
+                        </form>
+                    </div>
                 </div>
                 <div data-ext='css' class="col">
-                    <form>
-                        <textarea class="form-control form-control-lg">:css</textarea>
-                    </form>
+                    <div class='col-inner'>
+                        <span class='label'>css</span>
+                        <form>
+                            <textarea class="form-control form-control-lg">:css</textarea>
+                        </form>
+                    </div>
                 </div>
                 <div data-ext='js' class="col">
-                    <form>
-                        <textarea class="form-control form-control-lg">:js</textarea>
-                    </form>
+                    <div class='col-inner'>
+                        <span class='label'>javascript</span>
+                        <form>
+                            <textarea class="form-control form-control-lg">:js</textarea>
+                        </form>
+                    </div>
                 </div>
                 <div id='preview' data-ext='preview' style="position: relative;" class="col">
-                    <a id='openPreview' class="nav-link active" data-ext="reload" href=":pv" target="_blank">
-                        <i class="fa fa-external-link" style="position: absolute; width: auto;height: auto;top: 2vh;left: 2vh; z-index:10;"></i>
-                    </a>
-                    <iframe style="display:inline; position:absolute;top:0;left:0;z-index:0;" src=":pv"></iframe>
+                    <div class='col-inner'>
+                        <span class='label'>preview</span>
+                        <iframe style="width:100%;" src=":pv"></iframe>
+                    </div>
                 </div>
             </div>
         </div>

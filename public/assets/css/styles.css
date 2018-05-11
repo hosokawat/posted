@@ -7,3 +7,23 @@ main {
 main  * {
     height: 100%;
 }
+
+#content .label {
+    position: absolute;
+    text-align: center;
+    font-size: 3em;
+    width: 100%;
+    color: gainsboro;
+    z-index:0;
+}
+
+#content textarea {
+    background-color: transparent;
+    z-index:5;
+    position: absolute;
+}
+
+
+#content .col-inner {
+    position: relative;
+}
