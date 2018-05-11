@@ -28,10 +28,7 @@ $(function () {
         generateLibList();
     });
     function reloadPreview() {
-        if ($('#autoReload.active').length == 0) return;
-        var $pv = $(`<iframe style="display:inline; width:100%;position:absolute;top:0;left:0;z-index:0;" src='${file_code}.preview'></iframe>`)
-        $('#preview').remove('iframe');
-        $('#preview').append($pv);
+        $('#preview iframe').replaceWith($('#preview iframe').clone())
     }
     $('#toggleContent .nav-link').click(function () {
         $(this).toggleClass('active');
