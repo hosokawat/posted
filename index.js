@@ -50,7 +50,7 @@ function commit(origin_doc) {
 app.get('/:file_code/commit', function (req, res) {
   var file_code = req.params.file_code;
   db.findOne({ _id: file_code }, function (err, origin_doc) {
-    if (!doc) { return }
+    if (!origin_doc) { return }
     var doc = commit(origin_doc);
     db.insert(doc, function (err, newDocs) {
       res.redirect(`/${newDocs['_id']}`);
@@ -141,5 +141,5 @@ app.get('/:file_code/history', function (req, res) {
 var server = app.listen(process.env.PORT || 3000, function () {
   var host = server.address().address;
   var port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('listening at http://%s:%s', host, port);
 });

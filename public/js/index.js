@@ -168,6 +168,4 @@ $(function () {
         editor.setSize("100%", "100%");
         editors[$(this).data('ext')] = editor;
     });
-
-
 });
