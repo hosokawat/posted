@@ -22,5 +22,47 @@
         "name": "lodash(4.17.10)",
         "category": "lodash",
         "order": 1
+    },
+    {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js",
+        "name": "d3(4.13.0)",
+        "category": "d3",
+        "order": 1
+    },
+    {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js",
+        "name": "d3(3.5.17)",
+        "category": "d3",
+        "order": 2
+    },
+    {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js",
+        "name": "handlebars(4.0.11)",
+        "category": "handlebars",
+        "order": 1
+    },
+    {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js",
+        "name": "Chart.js(2.7.2)",
+        "category": "Chart",
+        "order": 1
+    },
+    {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.3/pixi.js",
+        "name": "pixi(4.7.3)",
+        "category": "pixi",
+        "order": 1
+    },
+    {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js",
+        "name": "three.js(r83)",
+        "category": "three",
+        "order": 1
+    },
+    {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.js",
+        "name": "raphael.js(2.2.7)",
+        "category": "raphael",
+        "order": 1
     }
 ]
