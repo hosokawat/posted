@@ -25,6 +25,10 @@ main {
     position: absolute;
 }
 
+.none {
+    display: none;
+}
+
 #content form {
     height: 100%;
 }
