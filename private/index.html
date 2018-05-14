@@ -7,6 +7,7 @@
     <title>Posted</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel=stylesheet href="http://codemirror.net/lib/codemirror.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
@@ -92,33 +93,33 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid">
+        <div id='contentContainer' class="container-fluid">
             <div id="content" class="row">
-                <div data-ext='html' class="col">
+                <div data-ext='html' class="col html">
                     <div class='col-inner'>
                         <span class='label'>html</span>
-                        <form>
-                            <textarea class="form-control form-control-lg">:html</textarea>
+                        <form class='form-control'>
+                            <textarea data-ext='html' data-mode='text/html' class="form-control form-control-lg">:html</textarea>
                         </form>
                     </div>
                 </div>
-                <div data-ext='css' class="col">
+                <div data-ext='css' class="col css">
                     <div class='col-inner'>
                         <span class='label'>css</span>
-                        <form>
-                            <textarea class="form-control form-control-lg">:css</textarea>
+                        <form class='form-control'>
+                            <textarea data-ext='css' data-mode='text/css' class="form-control form-control-lg">:css</textarea>
                         </form>
                     </div>
                 </div>
-                <div data-ext='js' class="col">
+                <div data-ext='js' class="col js">
                     <div class='col-inner'>
                         <span class='label'>javascript</span>
-                        <form>
-                            <textarea class="form-control form-control-lg">:js</textarea>
+                        <form class='form-control'>
+                            <textarea data-ext='js' data-mode='text/javascript' class="form-control form-control-lg">:js</textarea>
                         </form>
                     </div>
                 </div>
-                <div id='preview' data-ext='preview' style="position: relative;" class="col">
+                <div id='preview' data-ext='preview' style="position: relative;" class="col preview">
                     <div class='col-inner'>
                         <span class='label'>preview</span>
                         <iframe style="width:100%;" src=":pv"></iframe>
@@ -173,6 +174,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+    <script src="http://codemirror.net/lib/codemirror.js"></script>
+    <script src="http://codemirror.net/mode/xml/xml.js"></script>
+    <script src="http://codemirror.net/mode/css/css.js"></script>
+    <script src="http://codemirror.net/mode/javascript/javascript.js"></script>
     <script src="/js/index.js"></script>
 </body>
 

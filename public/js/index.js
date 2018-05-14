@@ -40,14 +40,15 @@ $(function () {
             $content.hide();
         }
     });
-    $('#content textarea').on('keyup keypress', function () {
+    $(document).on('keyup keypress', '#content  .CodeMirror textarea', function () {
         var ext = $(this).closest('div.col').data('ext');
-        console.log(`/${file_code}.${ext}`);
+        var data = editors[ext].getValue();
+
         $.ajax({
             url: `${file_code}.${ext}`,
             type: 'post',
             dataType: 'json',
-            data: { data: $(this).val() },
+            data: { data: data },
             dataType: 'text'
         }).done(function (data) {
             reloadPreview();
@@ -103,7 +104,6 @@ $(function () {
     $(document).on('click', ' .remove-lib', function (e) {
         e.preventDefault();
         var url = $(this).data('url');
-        console.log(url);
         updateLibUrl(url, true);
         $('#addLibDropdownMenu').removeClass('show');
         return false;
@@ -155,4 +155,19 @@ $(function () {
     $('#addLibDropdown > .dropdown-toggle').click(function () {
         $('#addLibList .show').removeClass('show');
     });
+
+    editors = {};
+    $('#content textarea').each(function () {
+        var txt = $(this).get()[0];
+        var m = $(this).data('mode');
+        var editor = CodeMirror.fromTextArea(txt, {
+            lineNumbers: false,
+            lineWrapping: true,
+            mode: m
+        });
+        editor.setSize("100%", "100%");
+        editors[$(this).data('ext')] = editor;
+    });
+
+
 });
