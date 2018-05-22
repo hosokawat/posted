@@ -98,7 +98,7 @@ app.post('/:file_code.:file_ext', function (req, res) {
 function calcHeaderColor(src) {
   var res = 0;
   for (i of src.split()) {
-    res += i.charCodeAt() ** 2;
+    res += i.charCodeAt() * 3;
   }
 
   return res % 360;
