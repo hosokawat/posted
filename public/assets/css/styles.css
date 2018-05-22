@@ -41,7 +41,9 @@ main {
 #content .col {
     height: 100%;
 }
-
+header {
+    margin-bottom:2vh;
+}
 #contentContainer {
     height: 100%;
 }

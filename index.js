@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 app.use(express.static('public'));
 
 function createDocument() {
-  return { html: '', css: '', js: '', libs: [], origin_id: '', hide: '0' }
+  return { html: '<p>Hello World!</p>', css: '', js: '', libs: [], origin_id: '', hide: '0' }
 }
 
 function generatePreview(file_code, doc) {
@@ -95,10 +95,20 @@ app.post('/:file_code.:file_ext', function (req, res) {
   });
 });
 
+function calcHeaderColor(src) {
+  var res = 0;
+  for (i of src.split()) {
+    res += i.charCodeAt() ** 2;
+  }
+
+  return res % 360;
+}
 function generateEditor(file_code, doc) {
   return editorTemplate.replace(':html', doc['html'])
     .replace(':css', doc['css'])
     .replace(':js', doc['js'])
+    .replace(':head_bg', calcHeaderColor(doc['_id']))
+
     .replace(/:pv/g, `/${file_code}.preview`)
     .replace(':commit', `/${file_code}/commit`);
 }
